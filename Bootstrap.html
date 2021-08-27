@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <title>Bootstrap</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1 class="text-primary">Listado de Usuarios del Sistema</h1>
+                    <!--Registros y buscador-->
+                    <div class="row">
+                        <form class="form-inline" action="/action_page.php">
+                            <div class="col-sm-4">
+                                <p>Mostrar <label for="sel1"></label>
+                                    <select  id="sel1">
+                                    <option>10</option>
+                                    <option>20</option>
+                                    <option>30</option>
+                                    <option>40</option>
+                                    </select></button> registros</p>
+                            
+                            </div>
+                            <div class="col-sm-4"></div>
+                            <div class="col-sm-4">
+                                <label for="usr">Buscar:</label>
+                                <input type="text" id="usr">
+                            </div>
+                        </form>
+                    </div>
+                    
+
+                    <!--Tabla-->
+                    <div class="table-responsive">
+                        <table class="table-bordered">
+                            <tr>
+                                <td>ID</td>
+                                <td>Usuario</td>
+                                <td>Sector</td>
+                                <td>Ultimo Ingreso</td>
+                                <td>Acción</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>admin</td>
+                                <td>Administración</td>
+                                <td>2018-01-17 12:49:56</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-repeat"></span></button>
+                                    <button type="button" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-edit"></span></button>
+                                    <button type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>marcelo</td>
+                                <td>Administración</td>
+                                <td>2018-02-24 13:38:56</td>
+                                <td><i></i></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>eduardo</td>
+                                <td>Producción</td>
+                                <td>2018-02-08 10:54:36</td>
+                                <td><i></i></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>jorge</td>
+                                <td>Administración</td>
+                                <td>2018-02-24 09:43:26</td>
+                                <td><i></i></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>gaston</td>
+                                <td>Producción</td>
+                                <td>2018-02-20 17:25:45</td>
+                                <td><i></i></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!--Botones-->
+                    <div>
+                        <form class="form-inline" action="/action_page.php">
+                            <div class="col-sm-4">
+                                <p>Mostrando del 1 al 5 de un total de 5 registros</p>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <button>Anterior</button>
+                                <button type="button" class="btn btn-primary active">1</button>
+                                <button>Siguiente</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <br></br>
+                    <div class="col">
+                        <button type="button" class="btn btn-primary">Agregar Usuario</button> 
+                    </div>
+        </div>
+        
+
+        <script>
+            $(document).ready(function(){
+              $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function() {
+                  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+              });
+            });
+        </script>
+    </body>
+</html>
